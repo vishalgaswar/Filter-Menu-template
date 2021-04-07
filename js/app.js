@@ -1,83 +1,83 @@
 const menu = [
   {
     id: 1,
-    title: "buttermilk pancakes",
-    category: "breakfast",
+    title: "What is Lorem Ipsum?",
+    category: "website",
     price: 15.99,
-    img: "./images/item-1.jpeg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. `,
   },
   {
     id: 2,
-    title: "diner double",
-    category: "lunch",
+    title: "What is Lorem Ipsum?",
+    category: "android",
     price: 13.99,
-    img: "./images/item-2.jpeg",
-    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. `,
   },
   {
     id: 3,
-    title: "godzilla milkshake",
-    category: "shakes",
+    title: "What is Lorem Ipsum?",
+    category: "digital",
     price: 6.99,
-    img: "./images/item-3.jpeg",
-    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.`,
   },
   {
     id: 4,
-    title: "country delight",
-    category: "breakfast",
+    title: "What is Lorem Ipsum?",
+    category: "website",
     price: 20.99,
-    img: "./images/item-4.jpeg",
-    desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. `,
   },
   {
     id: 5,
-    title: "egg attack",
-    category: "lunch",
+    title: "What is Lorem Ipsum?",
+    category: "android",
     price: 22.99,
-    img: "./images/item-5.jpeg",
-    desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. `,
   },
   {
     id: 6,
-    title: "oreo dream",
-    category: "shakes",
+    title: "What is Lorem Ipsum?",
+    category: "digital",
     price: 18.99,
-    img: "./images/item-6.jpeg",
-    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.`,
   },
   {
     id: 7,
-    title: "bacon overflow",
-    category: "breakfast",
+    title: "What is Lorem Ipsum?",
+    category: "website",
     price: 8.99,
-    img: "./images/item-7.jpeg",
-    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. `,
   },
   {
     id: 8,
-    title: "american classic",
-    category: "lunch",
+    title: "What is Lorem Ipsum?",
+    category: "android",
     price: 12.99,
-    img: "./images/item-8.jpeg",
-    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.`,
   },
   {
     id: 9,
-    title: "quarantine buddy",
-    category: "shakes",
+    title: "What is Lorem Ipsum?",
+    category: "digital",
     price: 16.99,
-    img: "./images/item-9.jpeg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.`,
   },
   {
     id: 10,
-    title: "bison steak",
-    category: "dinner",
+    title: "What is Lorem Ipsum?",
+    category: "digital",
     price: 22.99,
-    img: "./images/item-10.jpeg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    img: "../img/item.png",
+    desc: `The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.`,
   },
 ];
 const sectionCenter = document.querySelector(".section-center");
@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded",function() {
     displayMenuButton();
 });
 
-function diplayMenuItems(menuItems) {
+function displayMenuItem(menuItems) {
   let displayMenu = menuItems.map(function (item) {
     // console.log(item);
 
@@ -111,7 +111,7 @@ function diplayMenuItems(menuItems) {
 
   sectionCenter.innerHTML = displayMenu;
 }
-function displayMenuButtons() {
+function displayMenuButton() {
   const categories = menu.reduce(
     function (values, item) {
       if (!values.includes(item.category)) {
@@ -135,18 +135,18 @@ function displayMenuButtons() {
 
   filterBtns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
-      // console.log(e.currentTarget.dataset);
+       console.log(e.currentTarget.dataset);
       const category = e.currentTarget.dataset.id;
       const menuCategory = menu.filter(function (menuItem) {
-        // console.log(menuItem.category);
+         console.log(menuItem.category);
         if (menuItem.category === category) {
           return menuItem;
         }
       });
       if (category === "all") {
-        diplayMenuItems(menu);
+        displayMenuItem(menu);
       } else {
-        diplayMenuItems(menuCategory);
+        displayMenuItem(menuCategory);
       }
     });
   });
